@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Urban Miner - OS v2.0</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header>
+    <div>
+        <h1>The Urban Miner // OS v2.0</h1>
+        <div class="subtitle">Eco-Hacker Disassembly Cell Dashboard</div>
+    </div>
+    <div class="score">SALVAGED: <span id="si-score">0</span>g Si | <span id="au-score">0</span>g Au</div>
+</header>
+
+<div class="dashboard">
+    <!-- AI Perception Panel -->
+    <div class="panel">
+        <h2>Phase 1: AI Vision Pipeline</h2>
+        <div class="camera-feed" id="camera-feed">
+            <div class="camera-noise"></div>
+            <span class="feed-text">RAW_CAMERA_FEED.MP4 // PCB_SCAN</span>
+            <div class="target-box hidden" id="target-box">
+                <span class="target-label">VLSI_LOCKED</span>
+            </div>
+        </div>
+        <p class="section-label">Active Filter Sequence:</p>
+        <div class="pipeline" id="vision-pipeline">
+            <div class="block">INPUT</div>
+            <div class="arrow">&rarr;</div>
+            <div class="block filter" data-filter="grayscale">GRAYSCALE</div>
+            <div class="arrow">&rarr;</div>
+            <div class="block filter" data-filter="edge">EDGE_DETECT</div>
+            <div class="arrow target-arrow">&rarr;</div>
+            <div class="block status-block" id="target-status">AWAITING_FILTERS</div>
+        </div>
+    </div>
+
+    <!-- Hardware Logic Panel -->
+    <div class="panel">
+        <h2>Phase 2: Hardware Control Logic</h2>
+        <p class="section-label">Robotic Extraction Actuation Sequence:</p>
+        <div class="logic-grid">
+            <div class="input-stack">
+                <div class="block" id="tgt-found-input">TGT_FOUND (0)</div>
+                <div class="block" id="arm-safe-input">ARM_SAFE (1)</div>
+            </div>
+            <div class="arrow">&rarr;</div>
+            <div class="gate and-gate">AND</div>
+            <div class="arrow">&rarr;</div>
+            <div class="gate flip-flop">D-FF</div>
+            <div class="arrow act-arrow">&rarr;</div>
+            <div class="block status-block" id="activate-status">LOCKED</div>
+        </div>
+        <div class="arm-status" id="system-status">
+            &#9888; STATUS: AWAITING AI PERCEPTION.
+        </div>
+    </div>
+</div>
+
+<!-- Load Scripts at the end of the body for performance -->
+<script src="js/logic-gates.js"></script>
+<script src="js/vision-sim.js"></script>
+<script src="js/engine.js"></script>
+</body>
+</html>
